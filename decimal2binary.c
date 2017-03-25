@@ -1,3 +1,4 @@
+/* OLD VERSION
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -58,3 +59,4 @@ void switchOne(int array[], int size){//replaces nonzero's in an array with 1's
             array[i] = 1;
      }        
 }
+*/

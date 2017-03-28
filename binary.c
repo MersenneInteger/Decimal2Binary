@@ -4,29 +4,23 @@
 int main(int argc, char *argv[]) {
 
     int n = atoi(argv[1]);
-    int size = 0, i = 0;
-    
-    if(n < 256) 
-        size = 8;
-    else if(n < 512)
-        size = 10;
-    else
-        size = 16;
+    int size = (n < 256) ? 8: 16;
+    int bit = 1, i = 0;
+    int bit_list[size];
 
-    int bit = 1;
-    int binList[size];
-
-    for(i = 0; i < size; i++){
-        binList[(size -i) -1] = bit;
+    for(i = 0; i < size; i++) {
+        bit_list[(size -i) -1] = bit;
         bit = bit << 1;
     }
     
-    int temp = 0;
-    for(i = 0; i < size; i++) {
-        temp = (n & binList[i]);
+    int temp = 0, j = 0;
+    
+    for(i = 0; i < size; i++, j++) {
+        temp = (n & bit_list[i]);
         if(temp > 1)
             temp = 1;
-        printf("%d ", temp);
+        if(j % 4 == 0 && j != 0) printf(" ");
+        printf("%d", temp);
     } 
 
     return 0;    

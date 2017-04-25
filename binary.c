@@ -16,7 +16,7 @@ int main(int argc, char *argv[]) {
     int temp = 0, j = 0;
     
     for(i = 0; i < size; i++, j++) {
-        temp = (n & bit_list[i]);
+        temp = n & bit_list[i];
         if(temp > 1)
             temp = 1;
         if(j % 4 == 0 && j != 0) printf(" ");
